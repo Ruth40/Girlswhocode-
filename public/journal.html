@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<title>Mental Health Template</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="./styles/mentalhealth.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa|Special+Elite&display=swap" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src='./scripts/journal.js'></script>
+<style>
+  body,
+  html {
+    height: 100%;
+    font-family: 'Comfortaa', cursive;
+  }
+
+  h3 {
+    font-family: 'Special Elite', cursive;
+  }
+
+  .bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url('./img/rain.gif');
+    min-height: 75%;
+  }
+
+  .menu {
+    display: none;
+  }
+</style>
+
+<body>
+  <!-- Links (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-row w3-padding w3-freshair">
+      <div class="w3-col s2">
+        <a href="index.html" class="w3-button w3-block w3-freshair w3-text-white">HOME</a>
+      </div>
+      <div class="w3-col s2">
+        <a href="tips.html" class="w3-button w3-block w3-freshair w3-text-white">TIPS</a>
+      </div>
+      <div class="w3-col s2">
+        <a href="whattolookfor.html" class="w3-button w3-block w3-freshair w3-text-white">WHAT TO LOOK FOR</a>
+      </div>
+      <div class="w3-col s2">
+        <a href="resource.html" class="w3-button w3-block w3-freshair w3-text-white">RESOURCES</a>
+      </div>
+      <div class="w3-col s2">
+        <a href="journal.html" class="w3-button w3-block w3-freshair w3-text-white">JOURNAL</a>
+      </div>
+      <div class="w3-col s2">
+        <a href="aboutus.html" class="w3-button w3-block w3-freshair w3-text-white">ABOUT US</a>
+      </div>
+
+
+    </div>
+  </div>
+  <!-- Header with image -->
+  <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+      <span class="w3-tag">Renewing Minds</span>
+    </div>
+    <div class="w3-display-middle w3-center">
+      <span class="w3-text-white out m" style="font-size:80px"><br />Novitate Sensus Animis
+      </span>
+    </div>
+    <div class="w3-display-bottomright w3-center w3-padding-large">
+      <span class="w3-text-white">Journal</span>
+    </div>
+  </header>
+
+  <form id="journal-form">
+    <br>
+    <br>
+    <strong><label for="uname">Username:</label></strong>
+    <input type="text" id="uname" name="username" placeholder="Be creative..." />
+    <br>
+    <br>
+    <strong><label for="subject">Subject:</label></strong>
+    <textarea id="subject" name="subject" placeholder="Share your story..." style="width:600px;height:250px;"></textarea>
+    <br>
+    <br>
+    <input type="submit" value="submit" />
+  </form>
+
+  <ul id="journals">
+  </ul>
+  <!-- Add a background color and large text to the whole page -->
+</body>
+
+</html>

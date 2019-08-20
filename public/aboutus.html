@@ -1,0 +1,333 @@
+<!doctype html>
+<html>
+<title>Mental Health Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./styles/mentalhealth.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa|Special+Elite&display=swap" rel="stylesheet">
+<style>
+body, html {
+  height: 100%;
+  font-family: 'Comfortaa', cursive;
+}
+h3 {
+  font-family: 'Special Elite', cursive;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("./img/rain.gif");
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+.pic {
+  background-image: url("chris.jp");
+  height: 400px;
+  width: 300px;
+  border-radius: 50%;
+
+}
+
+
+
+
+</style>
+
+
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+
+
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-freshair">
+    <div class="w3-col s2">
+      <a href="index.html" class="w3-button w3-block w3-freshair w3-text-white">HOME</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="tips.html" class="w3-button w3-block w3-freshair w3-text-white">TIPS</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="whattolookfor.html" class="w3-button w3-block w3-freshair w3-text-white">WHAT TO LOOK FOR</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="resource.html" class="w3-button w3-block w3-freshair w3-text-white">RESOURCES</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="journal.html" class="w3-button w3-block w3-freshair w3-text-white">JOURNAL</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="aboutus.html" class="w3-button w3-block w3-freshair w3-text-white">ABOUT US</a>
+    </div>
+
+
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag">Renewing Minds</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+<span class="w3-text-white m out" style="font-size:80px"><br>Novitate Sensus Animis
+</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-white">About Us</span>
+  </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<!--<div class="w3-sand w3-grayscale w3-large">!-->
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+
+
+
+
+
+    <!-- Slideshow container -->
+    <div class="slideshow-container w3-padding-64">
+
+      <!-- Full-width images with number and caption text -->
+
+    <img src="./img/us.jpg" style="width:100%;">
+
+
+
+    </div>
+
+
+<center class="w3-padding-64" style="font-size:20px"><strong>
+  Thanks for reading!!!
+  </strong>
+</center>
+
+
+<center>
+  <img src="./img/taitu.jpg" class="pic" />
+</center>
+
+
+  <center>
+    <p>
+      <h3 class="w3-padding-me"><span class="w3-ttag w3-wide" style="font-size:30px"><img src="./img/kirby4.gif" style="width:10%"></img>Taitu<img src="./img/kirby4.gif" style="width:10%"></img></span></h3>
+      </p>
+
+
+  <p class="w3-padding-me">
+    My name is Taitu Ustanny, I currently attend Henry Snyder High School in Jersey City.
+    I started attending Snyder in the fall of 2018 when I moved to the United States. Before moving to
+    the US I lived in Kingston, Jamaica where I attended an all girls high school.
+    With my life changing so much in the past year came many different unexpected stresses and difficulties,
+    but everyday I try my best to embrace and experience all that life has to offer. My difficult experiences
+    in regards to mental health has taught me to embrace change and keep positive even in the most stressful situations.
+    I know first-hand how challenging adjusting to major life changes is and I try to support those around me
+    who are having a hard time. I decided to apply to the Girls Who Code Summer Immersion Program because I have always
+    had an avid interest in Computer Science and technology in general, I thought that participating in this program would give me the
+    kick start in Computer Science that I needed, and it did! In the future want to pursue a career in Computer Science and combine it
+    with my passion for art.
+    </p>
+    </center>
+
+
+    <center>
+      <img src="./img/ruth.jpg" class="pic" />
+    </center>
+
+    <center>
+      <p>
+        <h3 class="w3-padding-me"><span class="w3-rtag w3-wide" style="font-size:30px"><img src="./img/kirby3.gif" style="width:10%"></img>Ruth<img src="./img/kirby3.gif" style="width:10%"></img></span></h3>
+        </p>
+
+
+    <p class="w3-padding-me">
+      My name is Ruth Itua. I'm a senior at Sayreville War Memorial High School.
+      Mental Health is a topic that I'm really passionate about and believe to be important in our fast-paced society.
+      By becoming educated on this topic, I believe the human race will not only become a stronger unit but
+      also individuals will be able to attain a better mental state of being. Additionally, I believe that awareness
+      will be an indirect way of reducing the rapidly growing rates of suicide in this country. By creating this website,
+      I believe that I will be able to show those going through such issues that they have people rooting for them and that
+      they are not going through the process alone. In the future, I hope to minor in CS and major
+      in biochemistry with the goal of interlinking both of my passions into a useful career.
+      </p>
+      </center>
+
+
+
+
+      <center>
+        <img src="./img/sam.jpg" class="pic" />
+      </center>
+
+  <center>
+        <p>
+          <h3 class="w3-padding-me"><center>
+            <span class="w3-stag w3-wide" style="font-size:30px"><img src="./img/kirby.gif" style="width:10%"></img>Samantha<img src="./img/kirby.gif" style="width:10%"></img></span></center></h3>
+          </p>
+
+
+      <p class="w3-padding-me">
+        Hey! My name is Samantha Gordon, currently an up and coming junior in high school from New Jersey.
+        I play soccer for my school as well as a club team. When I’m bored I usually listen to music or watch videos on YouTube.
+        Hopefully in the future I can pursue something in the field of engineering and computer science. I wanted to make this website to help
+        not only people who are suffering from a mental illness, but people who want to help others with them. In school, I have a friend
+        who suffers from a mental illness and I want to offer them as well as other people help to at least realize they’re not alone.
+        </p>
+  </center>
+
+
+  <center>
+    <img src="./img/jenni.jpg" class="pic" />
+  </center>
+
+            <center>
+              <p>
+                <h3 class="w3-padding-me"><span class="w3-jtag w3-wide" style="font-size:30px"><img src="./img/kirby2.gif" style="width:10%"></img>Jennifer<img src="./img/kirby2.gif" style="width:10%"></img></span></h3>
+                </p>
+              <p class="w3-padding-me">Hello, my name is Jennifer Magana and I am an upcoming Junior at New Brunswick Highschool. I play on the girls varsity soccer team and do spring / winter track. Throughout the school year join a bunch of after school activities such as chess club, National Honors Society, Homework club and the civic engagement club. Since I always have a busy schedule, it is very important to take care of myself. I've learned this the hard way by stretching myself very thin. I wasn't taking care of myself for a long time and I ended up being overwhelmed everyday. I became very stressed out to the point where my grades started dropping because I had no motivation to push myself anymore. This project allowed me to bring awareness of how important it is to take care of yourself mentally. Especially since this a topic that most people do not feel comfortable talking about. When I grow up I want to help as many people I can. This program as helped me figure out ways of how I can touch so many people at once.</p>
+                    </div>
+                    </div>
+                  </center>
+
+
+
+
+  </body>
+  </html>

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
+<script>
+  function printDiv(divName) {
+    var printContents = document.getElementById(divName).innerHTML;
+    var originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = printContents;
+
+    window.print();
+
+    document.body.innerHTML = originalContents;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  body,
+  html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+  }
+
+  .bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("saku.jpg");
+    min-height: 75%;
+  }
+
+  .menu {
+    display: none;
+  }
+</style>
+<style>
+  div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+  }
+
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }
+
+  * {
+    box-sizing: border-box
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+</style>
+
+
+
+
+<script>
+  var slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+</script>
+
+
+<body>
+
+  <!-- Links (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-row w3-padding w3-black">
+      <div class="w3-col s3">
+        <a href="#about" class="w3-button w3-block w3-black">RESOURCES</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="#menu" class="w3-button w3-block w3-black">TIPS</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="#where" class="w3-button w3-block w3-black">WHAT TO LOOK FOR</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="#where" class="w3-button w3-block w3-black">ABOUT US</a>
+      </div>
+      <div>
+        <a href="#" class="w3-button w3-block w3-black">HOME</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header with image -->
+  <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+      <span class="w3-tag">Mental Health</span>
+    </div>
+    <div class="w3-display-middle w3-center">
+      <span class="w3-text-white" style="font-size:90px"><br>Novitate Sensus Animus
+      </span>
+    </div>
+    <div class="w3-display-bottomright w3-center w3-padding-large">
+      <span class="w3-text-white">Welcome to our website</span>
+    </div>
+  </header>
+
+  <!-- Add a background color and large text to the whole page -->
+  <div class="w3-sand w3-grayscale w3-large">
+
+    <!-- About Container -->
+    <div class="w3-container" id="about">
+      <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">RESOURCES</span></h5>
+        <p></p>
+        <p></p>
+        <div class="w3-panel w3-leftbar w3-light-grey">
+          <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.</i></p>
+          <p>Chef, Coffeeist and Owner: Liam Brown</p>
+        </div>
+        <img src="./img//w3images/coffeeshop.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Menu Container -->
+    <div class="w3-container" id="menu">
+      <div class="w3-content" style="max-width:700px">
+
+        <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Continents and Countries</span></h5>
+
+        <div class="w3-row w3-center w3-card w3-padding">
+          <a href="javascript:void(0)" onclick="openMenu(event, 'Europe');" id="myLink">
+            <div class="w3-col s6 tablink">Europe</div>
+          </a>
+          <a href="javascript:void(0)" onclick="openMenu(event, 'North America');">
+            <div class="w3-col s6 tablink">North America</div>
+          </a>
+          <a href="javascript:void(0)" onclick="openMenu(event, 'South America');">
+            <div class="w3-col s6 tablink">South America</div>
+          </a>
+          <a href="javascript:void(0)" onclick="openMenu(event, 'Africa');">
+            <div class="w3-col s6 tablink">Africa</div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openMenu(event, 'Asia');">
+            <div class="w3-col s6 tablink">Asia</div>
+          </a>
+          <a href="javascript:void(0)" onclick="openMenu(event, 'Oceania');">
+            <div class="w3-col s6 tablink">Oceania</div>
+          </a>
+        </div>
+
+        <div id="Europe" class="w3-container menu w3-padding-48 w3-card">
+          <div>
+            <h4>SPAIN</h4>
+          </div>
+          <div><a href="http://telefonodelaesperanza.org/llamanos">Telefonodelaesperanza</a></div>
+          <div>Call 963916006</div>
+
+
+          <div>
+            <h4>IRELAND</h4>
+          </div>
+          <div><a href="http://aware.ie">Aware</a></div>
+          <div>Call 1890 303 302</div>
+          <div>Email wecanhelp@aware.ie</div>
+          <div><a href="http://console.ie">Console</a></div>
+          <div>Call 1800 201 890</div>
+          <div><a href="http://Samaritans.ie">Samaritans</a></div>
+          <div>Call 116 123</div>
+
+          <div>
+            <h4>FRANCE</h4>
+          </div>
+          <div><a href="http://sos-amitie.com">SOS Amitie</a></div>
+          <div><a href="http://suicide-ecoute.fr">Suicide Ecoute</a></div>
+          <div>Call 01 45 39 40 00</div>
+          <div><a href="http://www.soshelpline.org/contact.html">SOS Helpline</a></div>
+          <div>Call 01 46 21 46 46 </div>
+
+          <div>
+            <h4>GERMANY</h4>
+          </div>
+          <div><a href="http://telefonseelsorge.de">Telefonseelsorge</a></div>
+          <div>Call 0800 111 0111</div>
+          <div>Call 0800 111 0222</div>
+
+          <div>
+            <h4>UNITED KINGDOM</h4>
+          </div>
+          <div><a href="https://www.mind.org.uk/about-us/what-we-do/depression-alliance/">Mind</a></div>
+          <div>Call 0300 123 3393 </div>
+          <div><a href="https://www.rethink.org">Rethink</a></div>
+          <div>Call 0300 5000 927</div>
+          <div>Call 0300 304 7000 </div>
+          <div><a href="http://www.sane.org.uk/textcare">Sane</a></div>
+        </div>
+
+        <div id="North America" class="w3-container menu w3-padding-48 w3-card">
+          <div>
+            <h4>CANADA</h4>
+          </div>
+          <div><a href="http://suicideprevention.ca/francais/">Suicide Prevention (french)</a></div>
+          <div><a href="http://suicideprevention.ca/need-help/">Suicide Prevention</a></div>
+
+          <div>
+            <h4>MEXICO</h4>
+          </div>
+          <div><a href="http://www.saptel.org.mx">Saptel</a></div>
+          <div>Call (55) 5259 8121</div>
+
+          <div>
+            <h4>UNITED STATES OF AMERICA (USA)</h4>
+          </div>
+          <div>Call 1 800 843 7274</div>
+          <div>Call 1 800 950 6264</div>
+          <div>Call 1 800 400 0900</div>
+        </div>
+
+
+        <div id="South America" class="w3-container menu w3-padding-48 w3-card">
+          <div>
+            <h4>ARGENTINA</h4>
+          </div>
+          <div><a href="https://www.casbuenosaires.com.ar/">Casbuenosaires</a></div>
+          <div>Call 135 </div>
+          <div>Call (011) 5275 1135</div>
+
+          <div>
+            <h4>BRAZIL</h4>
+          </div>
+          <div><a href="http://cvv.org.br">CVV</a></div>
+          <div>Call 141</div>
+
+          <div>
+            <h4>ECUADOR</h4>
+          </div>
+          <div><a href="http://telefonodelaesperanza.org/quito">Telefonodelaesperanza</a></div>
+          <div>Call (593) 2 6000477 2923327</div>
+
+          <div>
+            <h4>HONDURAS</h4>
+          </div>
+          <div><a href="http://telefonodelaesperanza.org/tegucigalpa">Telefonodelaesperanza</a></div>
+          <div>Call 2232 1314 </div>
+          <div>Call 2232 2707</div>
+
+          <div>
+            <h4>PERU</h4>
+          </div>
+          <div><a href="http://telefonodelaesperanza.org/lima">Telefonodelaesperanza</a></div>
+          <div>Call 00 51 1 273 8026</div>
+        </div>
+      </div>
+
+      <div id="Africa" class="w3-container menu w3-padding-48 w3-card">
+        <div>
+          <h4>GHANA</h4>
+        </div>
+        <div><a href="https://www.lifeline.org.au/About-Lifeline/Lifeline-International/Looking-for-Help/Ghana">Life Line</a></div>
+        <div>Call 233 244 846 701</div>
+
+        <div>
+          <h4>KENYA</h4>
+        </div>
+        <div><a href="https://www.befrienderskenya.org/">Befrienders Kenya</a></div>
+        <div>Call 254 722178177</div>
+        <div>Call 254 736 542304</div>
+        <div>Email befrienderskenya@gmail.com</div>
+
+        <div>
+          <h4>LIBYA</h4>
+        </div>
+        <div><a href="https://www.lifeline.org.au/About-Lifeline/Lifeline-International/Looking-for-Help/Liberia">Life Line</a></div>
+        <div>Call 06534308</div>
+
+        <div>
+          <h4>MAURITIUS</h4>
+        </div>
+        <div><a href="http://www.befrienders.org/directory?country=MU">Befrienders</a></div>
+        <div>Call 46 48 889</div>
+
+        <div>
+          <h4>SOUTH AFRICA</h4>
+        </div>
+        <div><a href="http://www.survivorsofsuicide.co.za">Survivors of Suicide</a></div>
+        <div>Call 0832565993</div>
+        <div>Call 0836520117</div>
+        <div><a href="http://www.childline.org.za/">Child Line</a></div>
+        <div>Call 08000 55555</div>
+      </div>
+
+      <div id="Asia" class="w3-container menu w3-padding-48 w3-card">
+        <div>
+          <h4>CHINA</h4>
+        </div>
+        <div><a href="http://www.crisis.org.cn">Crisis</a></div>
+        <div>Call 800 810 1117 </div>
+        <div>Call 010 82951332</div>
+
+        <div>
+          <h4>INDIA</h4>
+        </div>
+        <div><a href="http://www.tiss.edu">Tiss</a></div>
+        <div>Call 022-2552 1111</div>
+        <div>Email icall@tiss.edu</div>
+        <div><a href="http://vandrevalafoundation.com/">Vandrevala Foundation</a></div>
+        <div>Call 1860-266-2345 </div>
+        <div>Call 1800-233-3330</div>
+        <div>Email help@vandrevalafoundation.com</div>
+        <div><a href="http://lifelinekolkata.org/about.html">Life Line Kolkata</a></div>
+        <div>Call 24637401 </div>
+        <div>Call 7432</div>
+        <div>Email reach@lifelinekolkata.org</div>
+
+        <div>
+          <h4>INDONESIA</h4>
+        </div>
+        <div>Call 500 454</div>
+        <div>Call 500 454</div>
+        <div>Call 021 9696 9293</div>
+
+        <div>
+          <h4>JAPAN</h4>
+        </div>
+        <div><a href="http://www.find-j.jp/zenkoku.html">Inochinodenwa</a></div>
+        <div><a href="http://childline.or.jp/tel">Child Line</a></div>
+        <div>Call 0120 99 7777</div>
+
+        <div>
+          <h4>PAKISTAN</h4>
+        </div>
+        <div><a href="http://www.mind.org.pk/?sh_projects=suicide-prevention-helpline">Mind</a></div>
+        <div>Call 042 35761999</div>
+
+        <div>
+          <h4>PHILIPPINES</h4>
+        </div>
+        <div><a href="http://www.ngf-hope.org/contact-us/">Hope</a></div>
+        <div>Call (02) 804 4673</div>
+        <div>Call 0917 558 4673</div>
+        <div>Call 2919</div>
+      </div>
+    </div>
+
+    <div id="Oceania" class="w3-container menu w3-padding-48 w3-card">
+      <div>
+        <h4>AUSTRALIA</h4>
+      </div>
+      <div>Call 1300 22 4636</div>
+      <div><a href="https://thebutterflyfoundation.org.au/our-services/helpline/over-the-phone/">The Butterfly Foundation</a></div>
+      <div>Call 1800 33 4673</div>
+      <div><a href="https://kidshelpline.com.au">Kids Helpline</a></div>
+      <div>Call 1800 55 1800</div>
+
+      <div>
+        <h4>NEW ZEALAND</h4>
+      </div>
+      <div><a href="https://www.mentalhealth.org.nz/get-help/in-crisis/helplines/">Mental Health</a></div>
+      <div>Call or Text 1737</div>
+      <div>Call 0800 543 354 </div>
+      <div>Call 0800 611 116</div>
+    </div>
+
+
+
+
+
+
+
+
+    <img src="./img//w3images/coffeehouse2.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <body>
+
+    <div class="gallery">
+
+      <img src="./img/teen_demo.jpg" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+
+    <div class="gallery">
+
+      <img src="./img/treatment_rates.jpg" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+
+    <div class="gallery">
+      <a target="_blank" href="Disordersbyage.png">
+        <img src="./img/Disordersbyage.png" alt="Northern Lights" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+
+    <div class="gallery">
+      <a target="_blank" href="img_mountains.jpg">
+        <img src="./img/img_mountains.jpg" alt="Mountains" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="printableArea">
+      <h1>Print me</h1>
+    </div>
+
+    <input type="button" onclick="printDiv('printableArea')" value="print a div!" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Contact/Area Container -->
+    <div class="w3-container" id="where" style="padding-bottom:32px;">
+      <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHERE TO FIND US</span></h5>
+        <p>Find us at some address at some place.</p>
+        <img src="./img//w3images/map.jpg" class="w3-image" style="width:100%">
+        <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
+        <p><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+          <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+          <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
+          <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+          <p><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- End page content -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+    </footer>
+
+    <script>
+      // Tabbed Menu
+      function openMenu(evt, menuName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("menu");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+        }
+        document.getElementById(menuName).style.display = "block";
+        evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+      }
+      document.getElementById("myLink").click();
+    </script>
+
+  </body>
+
+</html>
